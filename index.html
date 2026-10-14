@@ -14,7 +14,10 @@
       .then(db => {
         const item = db[id];
         const app = document.getElementById("app");
-        if (!item) { app.textContent = "Tag not recognized."; return; }
+        if (!item) {
+  app.textContent = "Got id: [" + id + "] | Keys: " + Object.keys(db).join(", ");
+  return;
+}
         document.title = item.title;
         app.innerHTML = "";
         const h1 = document.createElement("h1");
