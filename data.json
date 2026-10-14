@@ -1,8 +1,8 @@
 {
   "k7x2m9qa": {
-    "title": "Grandma's Recipe Box",
-    "body": "Welcome! Here's the story...",
-    "image": "img/recipe.jpg"
+        "title": "Grandma's Recipe Box",
+    "css": "body{font-family:Georgia,serif;background:#fff8ee;color:#333;text-align:center;padding:2rem} h1{color:#b3541e} .card{background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,.15)}",
+    "html": "<div class='card'><h1>Grandma's Recipe Box</h1><p>Welcome! Here's the story...</p><img src='img/recipe.jpg' style='max-width:100%'></div>"
   },
   "p3d8wzle": {
     "title": "Concert Ticket #2",
