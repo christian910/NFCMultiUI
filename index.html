@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loading…</title>
+</head>
+<body>
+  <main id="app">Loading…</main>
+  <script>
+    const id = new URLSearchParams(location.search).get("id");
+    fetch("data.json")
+      .then(r => r.json())
+      .then(db => {
+        const item = db[id];
+        const app = document.getElementById("app");
+        if (!item) { app.textContent = "Tag not recognized."; return; }
+        document.title = item.title;
+        app.innerHTML = "";
+        const h1 = document.createElement("h1");
+        h1.textContent = item.title;
+        const p = document.createElement("p");
+        p.textContent = item.body;
+        app.append(h1, p);
+        if (item.image) {
+          const img = document.createElement("img");
+          img.src = item.image;
+          img.style.maxWidth = "100%";
+          app.append(img);
+        }
+      })
+      .catch(() => document.getElementById("app").textContent = "Error loading data.");
+  </script>
+</body>
+</html>
